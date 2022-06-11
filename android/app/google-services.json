@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "932105404685",
+    "project_id": "ikhwan-flutter-login",
+    "storage_bucket": "ikhwan-flutter-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932105404685:android:be7b4666193e731aa83044",
+        "android_client_info": {
+          "package_name": "com.example.nurikhwan_195411077_projectakhir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932105404685-dvnl7aujm53rfn6t3g7hu36q27p3css3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGJscJtvwNx2_eHWCi4JU5IoC4eUAS0wQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932105404685-dvnl7aujm53rfn6t3g7hu36q27p3css3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
