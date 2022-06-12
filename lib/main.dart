@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  // BuildContext adalah locator yang digunakan untuk melacak setiap widget di tree dan menemukan mereka dan posisinya di tree.
   Widget build(BuildContext context) {
+    // Menggunakan MaterialApp untuk menggunakan berbagai tool widget UI
     return const MaterialApp(
       home: HomePage(),
     );
@@ -37,6 +39,7 @@ class _HomePageState extends State<HomePage> {
 // FutureBuilder digunakan untuk menjalankan fungsi async (email dan pass),
 // dan berdasarkan fungsi tersebut akan mengupdate halaman UI
   @override
+  // BuildContext adalah locator yang digunakan untuk melacak setiap widget di tree dan menemukan mereka dan posisinya di tree.
   Widget build(BuildContext context) {
     return Scaffold(
         body: FutureBuilder(
@@ -86,6 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // CODE DI BAWAH INI DIGUNAKAN UNTUK MENGATUR TAMPILAN / DEKORASI UI DARI APLIKASI
   @override
+  // BuildContext adalah locator yang digunakan untuk melacak setiap widget di tree dan menemukan mereka dan posisinya di tree.
   Widget build(BuildContext context) {
     // Membuat textfield controller untuk masing-masing textfield email dan pass
     TextEditingController _emailcontroller = TextEditingController();

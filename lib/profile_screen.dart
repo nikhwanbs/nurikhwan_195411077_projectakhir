@@ -17,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
 
   // Coding di bawah ini digunakan untuk dekorasi tampilan atau UI aplikasi
   @override
+  // BuildContext adalah locator yang digunakan untuk melacak setiap widget di tree dan menemukan mereka dan posisinya di tree.
   Widget build(BuildContext context) {
     // Menggunakan Scaffold
     return Scaffold(
