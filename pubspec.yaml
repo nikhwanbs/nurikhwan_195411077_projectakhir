@@ -37,6 +37,8 @@ dependencies:
   # package tambahan untuk firebase auth dan firebase core
   firebase_core: ^1.17.1
   firebase_auth: ^3.3.19
+  # package tambahan http get untuk fethcing data dari API
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

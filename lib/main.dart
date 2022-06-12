@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Class HomePge menggunakan StatefulWidget
+// Class HomePage menggunakan StatefulWidget dikarenakan akan ada widget yang berubah saat berinteraksi dengan user(TextField)
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -61,20 +61,22 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-// Class _LoginScreenState mengestends class di atasnya, yang digunakan untuk autentikasi ke Firebase
+// Class _LoginScreenState mengekstends class di atasnya, yang digunakan untuk autentikasi ke Firebase
 class _LoginScreenState extends State<LoginScreen> {
-  //Login function
+  //Login function, memerlukan input string email dan password untuk melanjutkan proses autentikasi
   static Future<User?> loginUsingEmailPassword(
       {required String email,
       required String password,
       required BuildContext context}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
+    // Mencoba autentikasi email dan password yang sudah diinput ke firebase
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email, password: password);
       user = userCredential.user;
     } on FirebaseAuthException catch (e) {
+      // jika user tidak ditemukan, maka akan print "No User found for that email" pada IDE
       if (e.code == "user-not-found") {
         print("No User found for that email");
       }
@@ -82,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return user;
   }
 
-  // CODE DI BAWAH INI DIGUNAKAN UNTUK MENGATUR TAMPILAN UI DARI APLIKASI
+  // CODE DI BAWAH INI DIGUNAKAN UNTUK MENGATUR TAMPILAN / DEKORASI UI DARI APLIKASI
   @override
   Widget build(BuildContext context) {
     // Membuat textfield controller untuk masing-masing textfield email dan pass
@@ -173,10 +175,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 if (user != null) {
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => ProfileScreen()));
-                  //lets make a new screen
                 }
               },
-              // Text dari Button Login
+              // Text dari Button Login dan dekorasinya
               child: const Text(
                 "Login",
                 style: TextStyle(color: Colors.white, fontSize: 18.0),
